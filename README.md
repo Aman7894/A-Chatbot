@@ -1,4 +1,4 @@
-# AI Assistant - ChatGPT Clone
+# Perceptron - AI Chatbot
 
 A professional ChatGPT clone built with Next.js, React, and Google Gemini AI. Features a modern, responsive interface with advanced chat management capabilities.
 
