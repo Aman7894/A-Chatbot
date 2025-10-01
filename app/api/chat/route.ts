@@ -2,8 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 import { type NextRequest, NextResponse } from "next/server"
 
 // Initialize Gemini AI
-const genAI = GEMINI_API_KEY
-
+const genAI =new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
 interface Message {
   id: string
   content: string
