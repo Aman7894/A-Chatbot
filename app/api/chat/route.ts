@@ -2,7 +2,12 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 import { type NextRequest, NextResponse } from "next/server"
 
 // Initialize Gemini AI
-const genAI =new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
+require('dotenv').config();
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
+
+// Define types for messages and requests
+
 interface Message {
   id: string
   content: string
@@ -28,7 +33,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Get the generative model
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" })
 
     // Convert chat history to Gemini format
     const chatHistory = history.map((msg) => ({
